@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre os carros</title>
+</head>
+<body>
+    <form  method="POST" action="cadastro">
+        {% csrf_token %}
+    <div>
+        <div> 
+            <label for="campo-modelo">Modelo:</label>
+            <input type="text" name="modelo" id="carro-modelo">
+        </div>
+        <div>
+            <label for="campo-preco">Preço:</label>
+            <input type="text" name="preco" id="carro-preco">
+        </div>
+        <div>
+            <label for="campo-ano">Ano de Fabricação:</label>
+            <input type="text" name="ano-fabricacao" id="carro-ano">
+        </div>
+        <div>
+            <label for="cor">Cor</label>
+            <select name="cor" id="cor">
+                <option valute="" selected disabled>Selecione uma opção</option>
+                <option>Azul</option>
+                <option>Amarelo</option>
+                <option>Branco</option>
+                <option>Preto</option>
+                <option>Vermelho</option>
+                <option>Verde</option>
+            </select>
+            </div>
+        </div>
+    <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

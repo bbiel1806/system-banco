@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'exemplos_basicos/calculadora-form.css' %}">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form action="calculadora-form" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="campo-numero1">Número 1</label>
+            <input type="number" name="numero1" id="campo-numero1">
+        </div>
+        <div>
+            <label for="campo-numero2">Número 2</label>
+            <input type="number" name="numero2" id="campo-numero2">
+        </div>
+        <div>
+            <div>
+                <input type="radio" name="operacao" id="campo-operacao-soma" value="soma">
+                <label for="campo-operacao-soma">Soma</label>
+            </div>
+            <div>
+                <input type="radio" name="operacao" id="campo-operacao-subtracao" value="subtrair">
+                <label for="campo-operacao-subtracao">Subtrair</label>
+            </div>
+            <div>
+                <input type="radio" name="operacao" id="campo-operacao-multiplicar" value="multiplicar">
+                <label for="campo-operacao-multiplicar">Multiplicar</label>
+            </div>
+            <div>
+                <input type="radio" name="operacao" id="campo-operacao-divisao" value="dividir">
+                <label for="campo-operacao-divisao">Dividir</label>
+            </div>
+        </div>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if resultado is not None %}
+        <div>
+            <span>Resultado: {{resultado}}</span>
+        </div>
+    {% endif %}
+</body>
+</html>
