@@ -3,7 +3,7 @@
 <div class="columns is-centered">
     <span class="title is-2 is-spaced tag is-dark ">CADASTRO DE ESTADOS </span>
 </div>
-    <form action="cadastrar/" method="post">
+    <form method="post">
         {% csrf_token %}
         <div class="field ">
             <label class="label">Nome</label>
@@ -11,10 +11,10 @@
             <div class="control">
               <input class="input" type="text" placeholder="Ex.Rio de Janeiro" name="nome" id="nome" autofocus required min>
             </div>
-            <div class="is-pulled-right">
-                <label class="label">Selecione a sigla do estado:</label>
+            <div class="select">
+                <label class="label" name="sigla">Selecione a sigla do estado:</label>
                 <select name="sigla" id="sigla">
-                <option valute="" selected disabled>UF</option>
+                <option value="sigla" selected disabled>UF</option>
                 <option>AC</option>
                 <option>AL</option>
                 <option>AP</option>

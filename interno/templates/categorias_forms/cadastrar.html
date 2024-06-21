@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
+
 {% block body %}
 <div class="columns is-centered">
     <span class="title is-2 is-spaced tag is-dark ">CADASTRO DE CATEGORIAS </span>
 </div>
     <form method="post">
         {% csrf_token %}
-        <div class="field ">
-            <label class="label">Nome</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Ex.Frutas" name="nome" id="nome" autofocus required min>
-            </div>
-          </div>
+        {{ form.as_p}}
+       
         <div class="is-pulled-right">  
-            <a href="/interno/categoria" class="button is-outlined is-danger">
+            <a href="/interno/categoria-form/cadastrar" class="button is-outlined is-danger">
                 <span class="icon"><i class="fa-solid fa-xmark"></i>
                 </span><span>Cancelar</span>
                 </a>
